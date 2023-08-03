@@ -33,6 +33,7 @@ jobs:
           cache: maven
       - name: Build and start the application container
         run: |
+          docker network create docker_network_test_task
           docker build -t test_task_image .
           docker run -d --name test_task_container --network host docker_network_test_task
       - name: Wait for the application to start
