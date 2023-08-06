@@ -27,7 +27,7 @@
 
 **POST запрос для создания книги**
 
-```localhost:8089/book/```
+```localhost:8080/books```
 
 body: ```
 {
@@ -39,15 +39,15 @@ body: ```
 
 **DELETE запрос для удаления книги** 
 
-```localhost:8089/book/1```
+```localhost:8080/books/1```
 
 **GET запрос для получения информации о книге** 
 
-```localhost:8089/book/2```
+```localhost:8080/books/2```
 
 **PUT запрос для обновления информации о книге** 
 
-```localhost:8089/book/2```
+```localhost:8080/books/2```
 
 body: ```
 {
@@ -59,7 +59,7 @@ body: ```
 
 **POST запрос для создания читателя**
 
-```localhost:8089/reader```
+```localhost:8080/readers```
 
 body: ```
 {
@@ -71,15 +71,15 @@ body: ```
 
 **DELETE запрос для удаления читателя** 
 
-```localhost:8089/reader/1```
+```localhost:8080/readers/1```
 
 **GET запрос для получения инфы о читателе** 
 
-```localhost:8089/reader/2```
+```localhost:8080/readers/2```
 
 **PUT запрос для обновления информации о читателе** 
 
-```localhost:8089/reader/2```
+```localhost:8080/readers/2```
 
 body: ```
 {
@@ -91,7 +91,7 @@ body: ```
 
 **POST запрос для создания event - возврат книги или взятие**
 
-```localhost:8089/event```
+```localhost:8080/events```
 
 body: ```
 {
@@ -107,7 +107,7 @@ body: ```
 
 **GET запрос - самая популярная книга в библиотеке (которую больше всего брали) за определенное время** 
 
-```localhost:8089/statistics/popular/book?from=2023-01-01T12:34:56&to=2023-01-11T12:30:56```
+```localhost:8080/statistics/popular/book?from=2023-01-01T12:34:56&to=2024-01-11T12:30:56```
 
 **SQL запрос - самая частовстречаемая книга в журнале событий (без привязки к типу операции)** 
 
@@ -127,7 +127,7 @@ LIMIT 1;
 
 **GET запрос - нахождение человека, кто чаще всего брал книги в библиотеке за определенное время**
 
-```localhost:8089/statistics/popular/reader?from=2023-01-01T12:34:56&to=2023-01-11T12:30:56```
+```localhost:8080/statistics/popular/reader?from=2023-01-01T12:34:56&to=2024-01-11T12:30:56```
 
 ![img_4.png](img_4.png)
 
