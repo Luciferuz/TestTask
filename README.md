@@ -19,14 +19,6 @@
 - Test containers
 - Git-flow
 
-
-## Тесты
-```main:```
-![badge](https://github.com/Luciferuz/TestTask/actions/workflows/maven.yml/badge.svg?branch=main)
-
-```develop:```
-![badge](https://github.com/Luciferuz/TestTask/actions/workflows/maven.yml/badge.svg?branch=develop)
-
 ## Docker
 
 ```docker-compose up -d```
