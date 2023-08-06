@@ -1,9 +1,9 @@
-package com.antsiferov.testtask.controllers;
+package com.antsiferov.testtask.statistics;
 
-import com.antsiferov.testtask.entities.Book;
-import com.antsiferov.testtask.entities.Reader;
-import com.antsiferov.testtask.enums.EventType;
-import com.antsiferov.testtask.services.EventService;
+import com.antsiferov.testtask.book.Book;
+import com.antsiferov.testtask.event.EventService;
+import com.antsiferov.testtask.event.EventType;
+import com.antsiferov.testtask.reader.Reader;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,21 +26,10 @@ public class StatisticsController {
         return eventService.findMostPopularBook(EventType.TAKE, from, to);
     }
 
-    @GetMapping("/returned/book")
-    public Book findMostReturnedBook(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-                                     @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
-        return eventService.findMostPopularBook(EventType.RETURN, from, to);
-    }
-
     @GetMapping("/popular/reader")
     public Reader findMostPopularReader(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
                                         @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
         return eventService.findMostPopularReader(EventType.TAKE, from, to);
     }
 
-    @GetMapping("/best/reader")
-    public Reader findBestReader(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-                                 @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
-        return eventService.findMostPopularReader(EventType.RETURN, from, to);
-    }
 }

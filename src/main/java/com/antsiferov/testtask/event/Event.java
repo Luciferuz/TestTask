@@ -1,6 +1,7 @@
-package com.antsiferov.testtask.entities;
+package com.antsiferov.testtask.event;
 
-import com.antsiferov.testtask.enums.EventType;
+import com.antsiferov.testtask.book.Book;
+import com.antsiferov.testtask.reader.Reader;
 import jakarta.persistence.*;
 import lombok.*;
 

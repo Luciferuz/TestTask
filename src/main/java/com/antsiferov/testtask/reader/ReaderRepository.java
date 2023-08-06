@@ -1,9 +1,11 @@
-package com.antsiferov.testtask.repositories;
+package com.antsiferov.testtask.reader;
 
-import com.antsiferov.testtask.entities.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ReaderRepository extends JpaRepository<Reader, Long> {
+    Optional<Reader> findByEmail(String email);
 }
