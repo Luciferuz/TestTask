@@ -1,6 +1,5 @@
-package com.antsiferov.testtask.entities;
+package com.antsiferov.testtask.reader;
 
-import com.antsiferov.testtask.enums.Genre;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,18 +12,18 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Book {
+public class Reader {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title;
+    private String name;
 
-    private String author;
+    private String email;
 
-    private Genre genre;
+    private String phone;
 
-    private int totalCopies;
+    private String address;
 
 }

@@ -1,7 +1,5 @@
-package com.antsiferov.testtask.controllers;
+package com.antsiferov.testtask.event;
 
-import com.antsiferov.testtask.entities.Event;
-import com.antsiferov.testtask.services.EventService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/event")
+@RequestMapping("/events")
 public class EventController {
 
     private EventService eventService;
@@ -20,3 +18,4 @@ public class EventController {
         return eventService.save(event);
     }
 }
+

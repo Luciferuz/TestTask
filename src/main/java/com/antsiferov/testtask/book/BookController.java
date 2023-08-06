@@ -1,29 +1,27 @@
-package com.antsiferov.testtask.controllers;
+package com.antsiferov.testtask.book;
 
-import com.antsiferov.testtask.entities.Book;
-import com.antsiferov.testtask.services.BookService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 @AllArgsConstructor
 public class BookController {
 
     private BookService bookService;
 
-    @PostMapping("/create")
+    @PostMapping("")
     public Book createBook(@RequestBody Book book) {
         return bookService.save(book);
     }
 
-    @DeleteMapping("delete/{id}")
-    public String deleteBook(@RequestBody Book book, @PathVariable Long id) {
-        bookService.delete(book);
+    @DeleteMapping("{id}")
+    public String deleteBook(@PathVariable Long id) {
+        bookService.delete(id);
         return "Deleted id: " + id;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public Book getBook(@PathVariable Long id) {
         return bookService.findById(id);
     }

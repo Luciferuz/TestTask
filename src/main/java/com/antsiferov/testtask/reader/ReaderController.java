@@ -1,33 +1,31 @@
-package com.antsiferov.testtask.controllers;
+package com.antsiferov.testtask.reader;
 
-import com.antsiferov.testtask.entities.Reader;
-import com.antsiferov.testtask.services.ReaderService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/reader")
+@RequestMapping("/readers")
 public class ReaderController {
     private ReaderService readerService;
 
-    @PostMapping("/create")
+    @PostMapping("")
     public Reader createReader(@RequestBody Reader reader) {
         return readerService.save(reader);
     }
 
-    @DeleteMapping("delete/{id}")
-    public String deleteReader(@RequestBody Reader reader, @PathVariable Long id) {
-        readerService.delete(reader);
+    @DeleteMapping("{id}")
+    public String deleteReader(@PathVariable Long id) {
+        readerService.delete(id);
         return "Deleted id: " + id;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public Reader getReader(@PathVariable Long id) {
         return readerService.findById(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     public Reader update(@PathVariable Long id, @RequestBody Reader updatedReader) {
         return readerService.update(id, updatedReader);
     }
